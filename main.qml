@@ -17,7 +17,6 @@ ApplicationWindow {
             delegate: ItemDelegate {
                 text: "Item " + (index + 1)
                 width: listView.width
-
             }
         }
     }
