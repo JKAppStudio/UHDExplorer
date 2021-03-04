@@ -1,19 +1,23 @@
 import QtQuick 2.12
-import QtQuick.Window 2.12
 import QtQuick.Controls 2.5
-import QtQuick.Controls.Material 2.3
 
-Window {
+ApplicationWindow {
     width: 640
     height: 480
     visible: true
-    title: qsTr("Hello World")
-    color: "darkgray"
+    title: qsTr("UHD Explorer")
 
-    Button{
-        width: 100
-        height: 100
+    ScrollView{
+        anchors.fill: parent
 
-        text: qsTr("Hello botton")
+        ListView {
+            id: listView
+            width: parent.width
+            model: 5
+            delegate: ItemDelegate {
+                text: "Item " + (index + 1)
+                width: listView.width
+            }
+        }
     }
 }
